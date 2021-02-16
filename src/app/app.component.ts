@@ -34,11 +34,11 @@ export class AppComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.pattern(
       "^" +
-      "(?=.*[0-9])" +         //at least 1 digit
-      "(?=.*[a-z])" +         //at least 1 lower case letter
-      "(?=.*[A-Z])" +         //at least 1 upper case letter
-      "(?=\\S+$)" +           //no white spaces
-      ".{8,}" +               //at least 4 characters
+      "(?=.*[0-9])" +
+      "(?=.*[a-z])" +   
+      "(?=.*[A-Z])" +
+      "(?=\\S+$)" + 
+      ".{8,}" + 
       "$"
     )])
   })
@@ -57,11 +57,11 @@ export class AppComponent {
     registerEmail: ['', [Validators.required, Validators.email]],
     registerPassword: ['', Validators.compose([Validators.required, Validators.pattern(
       "^" +
-      "(?=.*[0-9])" +         //at least 1 digit
-      "(?=.*[a-z])" +         //at least 1 lower case letter
-      "(?=.*[A-Z])" +         //at least 1 upper case letter
-      "(?=\\S+$)" +           //no white spaces
-      ".{8,}" +               //at least 4 characters
+      "(?=.*[0-9])" + 
+      "(?=.*[a-z])" + 
+      "(?=.*[A-Z])" +   
+      "(?=\\S+$)" + 
+      ".{8,}" +    
       "$")])],
     confirmPassword: ['', Validators.compose([Validators.required])]
   }, {
@@ -136,6 +136,7 @@ export class AppComponent {
   onLoginSubmit() {
     showValidationMessage(this.loginForm);
     if (this.loginForm.invalid) return;
+    alert('Veriler consola gönderildi.')
     console.log(this.loginForm.value)
     this.loginForm.reset();
   }
@@ -143,6 +144,7 @@ export class AppComponent {
   onRegisterSubmit() {
     showValidationMessage(this.registerForm);
     if (this.registerForm.invalid) return;
+    alert('Veriler consola gönderildi.')
     console.log(this.registerForm.value)
     this.registerForm.reset();
   }
