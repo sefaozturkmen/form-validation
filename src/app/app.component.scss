@@ -1,0 +1,275 @@
+.nav-link.active {
+    color: #484848;
+    background-color: #fff;
+}
+
+.m-26 {
+    margin-top: 26px!important;
+}
+
+@media (max-width: 476px) {
+    .container-edit {
+        padding: 72px 10px!important;
+    }
+}
+
+%input-custom {
+    background-color: rgb(238, 238, 238);
+    border: 2px solid rgb(238, 238, 238);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(155, 155, 155);
+    font-family: -apple-system, BlinkMacSystemFont, Arial, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.32px;
+    line-height: 1.5;
+    outline: 0px;
+    width: 100%;
+    padding: 14px;
+    &:hover {
+        background-color: rgb(245, 245, 245);
+    }
+    &:focus {
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(255, 96, 0);
+        color: rgb(72, 72, 72);
+        transition: all 250ms ease 0s;
+    }
+}
+
+%btn-costum {
+    -webkit-box-align: center;
+    position: relative;
+    height: 56px;
+    min-width: 100%;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    padding: 8px;
+    text-decoration: none;
+    background-color: rgb(255, 96, 0);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    &:hover {
+        background-color: rgb(227, 86, 0);
+        transition: all 150ms ease 0s;
+    }
+}
+
+.btn-disabled {
+    background-color: rgb(204, 204, 204)!important;
+    color: rgb(145, 145, 145)!important;
+    cursor: not-allowed!important;
+    user-select: none!important;
+}
+
+.container-edit {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 72px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    max-width: 472px;
+    width: 100%;
+    margin: 0 auto;
+    color: #484848;
+    .nav-pills {
+        display: inline-flex;
+        width: 100%;
+        border-radius: 8px;
+        background-color: #eee;
+        border: 2px solid #eee;
+        .item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            cursor: pointer;
+            .nav-link {
+                width: 100%;
+                border-radius: 8px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                font-size: 16px;
+                font-weight: 600;
+                color: #484848;
+            }
+        }
+    }
+    form {
+        border: 0!important;
+    }
+    //Login
+    .input-control {
+        position: relative;
+        margin-top: 16px;
+        .input-item {
+            @extend %input-custom;
+        }
+        .password-visibilty {
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            visibility: hidden;
+            &::before {
+                content: "\f06e";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                top: -6px;
+                right: -3px;
+                visibility: visible;
+            }
+            &:checked::before {
+                content: "\f070";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                top: -6px;
+                right: -3px;
+                visibility: visible;
+            }
+        }
+    }
+    .btn-control {
+        margin-top: 32px;
+        .btn-submit {
+            @extend %btn-costum;
+        }
+    }
+    .password-control {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        text-align: left;
+        margin-top: 12px;
+        span {
+            font-size: 16px;
+            color: #ff6000;
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: -.32px;
+            cursor: pointer;
+            &:hover {
+                color: #c25700;
+            }
+        }
+    }
+    //Register
+    .text-control {
+        margin: 32px 0 8px;
+        span {
+            display: flex;
+            height: 40px;
+            align-items: center;
+            color: #646464;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: -.28px;
+            &::after {
+                flex: 1;
+                margin-left: 32px;
+                height: 1px;
+                content: "";
+                background-color: #e5e5e5;
+            }
+        }
+    }
+    .input-groups {
+        display: flex;
+        width: 100%;
+        .input-controller {
+            width: 50%;
+            &:first-child {
+                margin-right: 16px;
+            }
+            input {
+                @extend %input-custom;
+            }
+        }
+    }
+    .checkbox-container {
+        display: flex;
+        margin-top: 16px;
+        .checkbox-box {
+            margin-right: 10px;
+            .checkbox-item {
+                appearance: none;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid rgb(155, 155, 155);
+                cursor: pointer;
+                display: inline-block;
+                outline: none;
+                position: relative;
+                border-radius: 8px;
+                height: 24px;
+                width: 24px;
+                margin-right: 10px;
+                &:checked {
+                    background: rgb(255, 96, 0);
+                    border: 2px solid rgb(255, 96, 0);
+                }
+                &:checked::before {
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f00c";
+                    font-weight: 900;
+                    color: #fff;
+                    background-size: 16px 13px;
+                    inset: -2px 3px;
+                    height: 13px;
+                    position: absolute;
+                    width: 16px;
+                }
+            }
+        }
+        label {
+            line-height: 1.5;
+            letter-spacing: -.28px;
+            font-size: 14px;
+        }
+    }
+    .btn-control {
+        button {
+            @extend %btn-costum;
+        }
+    }
+}
+
+///////////////
+.input-item.ng-dirty.ng-valid {
+    border: 2px solid green!important;
+    background-color: #fff!important;
+}
+
+.input-item.ng-touched.ng-invalid.ng-dirty {
+    border: 2px solid red!important;
+    background-color: #fff!important;
+}
+
+.error-messages {
+    margin: 0;
+    padding: 0;
+}
+
+.error-messages li {
+    color: rgb(251, 111, 111);
+    font-size: 13px;
+    letter-spacing: -0.24px;
+    line-height: 1.5;
+    margin: 7px 0px 7px 8px;
+    list-style: none;
+}
