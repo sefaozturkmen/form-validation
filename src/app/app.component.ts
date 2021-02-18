@@ -5,7 +5,7 @@ import { showValidationMessage } from 'src/utils/utils';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss','./app-component-2.scss']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'enoca-sefaozturkmen';
